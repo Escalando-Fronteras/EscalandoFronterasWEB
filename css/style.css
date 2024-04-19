@@ -1035,16 +1035,6 @@ blockquote::before {
   color: var(--custom-btn-bg-color);
 }
 
-section {
-  padding: 50px 0;
-  overflow: hidden;
-  position: relative;
-}
-
-section:first-of-type {
-  padding-top: 0;
-}
-
 .team .section-title p {
   margin-left: auto;
   margin-right: auto;
