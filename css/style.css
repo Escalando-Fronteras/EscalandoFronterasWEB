@@ -1505,6 +1505,40 @@ blockquote::before {
   color: var(--white-color);
 }
 
+/* ===================== Donación ===================== */
+
+.stripe-section {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.paypal-continue {
+  text-align: center;
+  margin-top: 15px; /* Adjust the spacing as needed */
+}
+
+.paypal-continue p {
+  margin: 0;
+  font-size: 0.9rem; /* Adjust the font size as needed */
+  color: #333; /* Adjust the text color as needed */
+}
+
+.paypal-button {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.paypal-img {
+  max-width: 280px; /* Makes the image responsive */
+  height: auto; /* Maintain aspect ratio */
+  cursor: pointer; /* Changes the cursor to indicate it's clickable */
+  display: block;
+  margin: 0 auto;
+  padding-top: 0;
+}
+
+
 
 /* ===================== Estilos responsivos ===================== */
 

@@ -112,144 +112,32 @@
 
             <section class="donate-section">
                 <div class="section-overlay"></div>
-                <div class="container">
-                    <div class="row">
-
-                        <div class="col-lg-6 col-12 mx-auto">
-                            <form class="custom-form donate-form" action="#" method="get" role="form">
-                                <h3 class="mb-4">Haz una donación</h3>
-
-                                <div class="row">
-                                    <div class="col-lg-12 col-12">
-                                        <h5 class="mb-3">Frecuencia de Donación</h5>
-                                    </div>
-
-                                    <div class="col-lg-6 col-6 form-check-group form-check-group-donation-frequency">
-                                        <div class="form-check form-check-radio">
-                                            <input class="form-check-input" type="radio" name="DonationFrequency" id="DonationFrequencyOne" checked>
-                                            
-                                            <label class="form-check-label" for="DonationFrequencyOne">
-                                                Una vez
-                                            </label>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-12 mx-auto">
+                                <form class="custom-form donate-form" action="#" method="get" role="form">
+                                    <h3 class="mb-4">Haz una donación</h3>
+                                        <div class="row">
+                                            <!-- Stripe Buy Button -->
+                                            <stripe-buy-button class="stripe-section"
+                                                buy-button-id="buy_btn_1P7OZJP5bZ1okdvjSGSnO1gb"
+                                                publishable-key="pk_test_51P7OGRP5bZ1okdvj49DUCGSd3PlTcP9zXYjwGy5j99KmMYdfxh8MnuiEEgaBYRDOB3FiPXjqFXjQEDI4BlD2Elol00xVZN5w95">
+                                            </stripe-buy-button>
+                                            <div class="paypal-continue">
+                                                <p>O, continúa con</p>                                             
+                                            </div>
+                                            <!-- PayPal Button Container -->
+                                            <div class="paypal-button">
+                                                <a href="https://www.paypal.com/donate/?hosted_button_id=65B7AP588V5BC" target="_blank">
+                                                    <img src="images/paypal.png" alt="PayPal Button" class="img-fluid paypal-img" />
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
-
-                                    <div class="col-lg-6 col-6 form-check-group form-check-group-donation-frequency">
-                                        <div class="form-check form-check-radio">
-                                            <input class="form-check-input" type="radio" name="DonationFrequency" id="DonationFrequencyMonthly">
-                                            
-                                            <label class="form-check-label" for="DonationFrequencyMonthly">
-                                                Mensual
-                                            </label>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-12 col-12">
-                                        <h5 class="mt-2 mb-3">Selecciona un monto</h5>
-                                    </div>
-
-                                    <div class="col-lg-3 col-md-6 col-6 form-check-group">
-                                        <div class="form-check form-check-radio">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                            <label class="form-check-label" for="flexRadioDefault1">
-                                                $100
-                                            </label>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-3 col-md-6 col-6 form-check-group">
-                                        <div class="form-check form-check-radio">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                                            <label class="form-check-label" for="flexRadioDefault2">
-                                                $150
-                                            </label>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-3 col-md-6 col-6 form-check-group">
-                                        <div class="form-check form-check-radio">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-                                            <label class="form-check-label" for="flexRadioDefault3">
-                                                $250
-                                            </label>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-3 col-md-6 col-6 form-check-group">
-                                        <div class="form-check form-check-radio">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
-                                            <label class="form-check-label" for="flexRadioDefault4">
-                                                $300
-                                            </label>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-3 col-md-6 col-6 form-check-group">
-                                        <div class="form-check form-check-radio">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault5">
-                                            <label class="form-check-label" for="flexRadioDefault5">
-                                                $500
-                                            </label>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-3 col-md-6 col-6 form-check-group">
-                                        <div class="form-check form-check-radio">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault6">
-                                            <label class="form-check-label" for="flexRadioDefault6">
-                                                $1000
-                                            </label>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-6 col-12 form-check-group">
-                                        <div class="input-group">
-                                            <span class="input-group-text" id="basic-addon1">$</span>
-                                            
-                                            <input type="text" class="form-control" placeholder="Cantidad Personalizada" aria-label="Username" aria-describedby="basic-addon1">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-12 col-12">
-                                        <h5 class="mt-1">Información Personal</h5>
-                                    </div>
-
-                                    <div class="col-lg-6 col-12 mt-2">
-                                        <input type="text" name="donation-name" id="donation-name" class="form-control" placeholder="Nombre Completo" required>
-                                    </div>
-
-                                    <div class="col-lg-6 col-12 mt-2">
-                                        <input type="email" name="donation-email" id="donation-email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Correo Electrónico" required>
-                                    </div>
-
-                                    <div class="col-lg-12 col-12">
-                                        <h5 class="mt-4 pt-1">Método de Pago</h5>
-                                    </div>
-
-                                    <div class="col-lg-12 col-12 mt-2">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="DonationPayment" id="flexRadioDefault9">
-                                            <label class="form-check-label" for="flexRadioDefault9">
-                                                <i class="bi-credit-card custom-icon ms-1"></i>
-                                                Tarjeta Crédito o Débito
-                                            </label>
-                                        </div>
-
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="DonationPayment" id="flexRadioDefault10">
-                                            <label class="form-check-label" for="flexRadioDefault10">
-                                                <i class="bi-paypal custom-icon ms-1"></i>
-                                                Paypal
-                                            </label>
-                                        </div>
-
-                                        <button type="submit" class="form-control mt-4">Hacer Donación</button>
-                                    </div>
-                                </div>
-                            </form>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                </div>
             </section>
         </main>
 
@@ -340,6 +228,22 @@
         <script src="js/jquery.sticky.js"></script>
         <script src="js/counter.js"></script>
         <script src="js/custom.js"></script>
-
+        <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+              var stripeBtn = document.querySelector('stripe-buy-button');
+              var paypalBtn = document.getElementById('flexRadioDefault10');
+            
+              paypalBtn.addEventListener('change', function () {
+                if (paypalBtn.checked) {
+                  stripeBtn.style.display = 'none'; // Hide Stripe button
+                  // Display PayPal specific elements here
+                } else {
+                  stripeBtn.style.display = 'block'; // Show Stripe button
+                  // Hide PayPal specific elements here
+                }
+              });
+            });
+        </script>
     </body>
 </html>
