@@ -678,6 +678,61 @@ strong {
   line-height: normal;
 }
 
+/* ===================== Documental ===================== */
+
+.about-section {
+  margin-top: 7rem;
+  margin-bottom: 1rem;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.about-section .container {
+  height: 100%;
+}
+
+.about-section .left-column {
+  background: url('https://freeman.la/wp-content/uploads/2020/06/portada-Escalando-Fronteras-campana.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+/* Los estilos siguientes asumen que estás usando colores y fuentes ya definidos en tu CSS global. */
+.about-section .right-column {
+  background-color: var(--secondary-color) !important; /* Usa la variable de color primario definida en tu CSS global */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-section h3 {
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
+
+.about-section h2 {
+  font-size: 3rem;
+  color: var(--text-color);
+}
+
+.about-section p {
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+.btn-play {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgb(0, 0, 0, 0.5);
+}
+
+@media (max-width: 991px) {
+  .about-section .left-column,
+  .about-section .right-column {
+    min-height: 300px;
+  }
+}
+
 
 /* ===================== Voluntario ===================== */
 
