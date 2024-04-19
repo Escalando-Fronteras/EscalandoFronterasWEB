@@ -953,6 +953,140 @@ blockquote::before {
   height: 150px;
 }
 
+/* ===================== Nuestro Equipo ===================== */
+
+.team .member {
+  margin-bottom: 20px;
+  overflow: hidden;
+  border-radius: 5px;
+  background: #fff;
+}
+
+.team .member .member-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.team .member .social {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  align-items: center;
+  left: 0;
+  bottom: 40px;
+  right: 0;
+  opacity: 0;
+  transition: ease-in-out 0.3s;
+}
+
+.team .member:hover .social {
+  opacity: 1;
+  bottom: 15px;
+}
+
+.team .member .social a {
+  color: #fff;
+  margin: 0 3px;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  background: #597081;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  transition: background-color 0.3s;
+}
+
+.team .member .social a:hover {
+  background: #1111;
+}
+
+.team .member .social a i {
+  text-align: center;
+  line-height: 36px;
+}
+
+.team .row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.team .col-lg-3.col-md-6 {
+  flex: 0 0 auto;
+  max-width: none;
+}
+
+.team .member .member-info {
+  padding: 25px 15px;
+}
+
+.team .member .member-info h4 {
+  font-weight: 700;
+  margin-bottom: 5px;
+  font-size: 18px;
+  color: #31363F;
+}
+
+.team .member .member-info span {
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--custom-btn-bg-color);
+}
+
+section {
+  padding: 50px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+section:first-of-type {
+  padding-top: 0;
+}
+
+.team .section-title p {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1000px;
+}
+
+.section-title {
+  text-align: center;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 180px;
+  height: 3px;
+  background: #597081;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section-title p {
+  margin-bottom: auto;
+  width: 80%;
+}
+
+.section-bg {
+  padding: 120px 0;
+  color: #fff;
+}
 
 /* ===================== Testimonios ===================== */
 
