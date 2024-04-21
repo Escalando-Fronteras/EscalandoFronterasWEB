@@ -780,52 +780,82 @@ strong {
 
 /* ===================== Nuestros patrocinadores ===================== */
 
-.container-sponsors {
-  padding-top: 150px;
+.row-sponsors{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-top: 100px;
 }
 
-.container-sponsors h2 {
+.s-container{
+  max-width: 1080px;
+  margin: auto;
+  padding: 25px;
+}
+
+.brands{
+  margin: 100px auto;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.brands h2 {
   text-align: center;
-  padding: 20px;
+  justify-content: center;
 }
-
-.slick-slide{
-  margin: 0 20px;
+.sponsor1{
+  width: 200px;
 }
-.slick-slide img{
+.sponsor1 img{
   width: 100%;
+  cursor: pointer;
+  filter: grayscale(100%);
 }
-.slick-slider{
-  position: relative;
-  display: block;
-  box-sizing: border-box;
-}
-.slick-list{
-  position: relative;
-  display: block;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-}
-.slick-track{
-  position: relative;
-  top: 0;
-  left: 0;
-  display: block
-}
-.slick-slide{
-  display: none;
-  float: left;
-  height: 100%;
-  min-height: 1px;
-}
-.slick-slide img{
-  display: block;
-}
-.slick-initialized .slick-slide{
-  display: block;
+.sponsor1 img:hover {
+  filter: grayscale(0%);
 }
 
+.sponsor2 {
+  width: 120px;
+}
+
+.sponsor2 img {
+  width: 120px;
+  cursor: pointer;
+  filter: grayscale(100%);
+}
+
+.sponsor2 img:hover {
+  filter: grayscale(0%);
+}
+
+.sponsor3 {
+  width: 85px;
+}
+
+.sponsor3 img {
+  width: 100%;
+  cursor: pointer;
+  filter: grayscale(100%);
+}
+
+.sponsor3 img:hover {
+  filter: grayscale(0%);
+}
+
+.sponsor4 {
+  width: 250px;
+}
+
+.sponsor4 img {
+  width: 100%;
+  cursor: pointer;
+  filter: grayscale(100%);
+}
+
+.sponsor4 img:hover {
+  filter: grayscale(0%);
+}
 
 
 /* ===================== Voluntario ===================== */
