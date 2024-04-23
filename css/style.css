@@ -687,6 +687,7 @@ strong {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  padding: 80px;
 }
 
 .about-image {
@@ -1050,6 +1051,7 @@ blockquote::before {
 .cta-section {
   position: relative;
   overflow: hidden;
+  padding: 60px;
 }
 
 .cta-section::before {
