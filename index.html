@@ -539,20 +539,25 @@
                         <div class="col-lg-6 col-12">
                             <h2 class="text-white mb-4">Voluntario</h2>
 
-                            <form class="custom-form volunteer-form mb-5 mb-lg-0" action="#" method="post" role="form">
+                            <form action="https://api.web3forms.com/submit" method="POST" id="volunteer" class="custom-form volunteer-form mb-5 mb-lg-0" action="#" role="form">
                                 <h3 class="mb-4">Conviértete en Voluntario</h3>
 
                                 <div class="row">
+
+                                    <input type="hidden" name="access_key" value="ae4e13a2-c73a-4e1c-8ef8-64960acd354c">
+                                    <input type="hidden" name="subject" value="New Submission from Web3Forms">
+                                    <input type="checkbox" name="botcheck" id="" style="display: none;">
+
                                     <div class="col-lg-6 col-12">
-                                        <input type="text" name="volunteer-name" id="volunteer-name" class="form-control" placeholder="Nombre" required>
+                                        <input type="text" name="Nombre-voluntario" id="volunteer-name" class="form-control" placeholder="Nombre" required>
                                     </div>
 
                                     <div class="col-lg-6 col-12">    
-                                        <input type="email" name="volunteer-email" id="volunteer-email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Correo Electrónico" required>
+                                        <input type="email" name="Email-voluntario" id="volunteer-email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Correo Electrónico" required>
                                     </div>
 
                                     <div class="col-lg-6 col-12">
-                                        <input type="text" name="volunteer-subject" id="volunteer-subject" class="form-control" placeholder="Asunto" required>
+                                        <input type="text" name="Asunto-voluntario" id="volunteer-subject" class="form-control" placeholder="Asunto" required>
                                     </div>
 
                                     <div class="col-lg-6 col-12">
@@ -566,9 +571,12 @@
                                     </div>
                                 </div>
 
-                                <textarea name="volunteer-message" rows="3" class="form-control" id="volunteer-message" placeholder="Comentarios (Opcional)"></textarea>
+                                <textarea name="Mensaje-voluntario" rows="3" class="form-control" id="volunteer-message" placeholder="Comentarios (Opcional)"></textarea>
 
                                 <button type="submit" class="form-control">Entregar</button>
+
+                                    <div id="resultado"></div>
+
                             </form>
                         </div>
 
@@ -808,7 +816,7 @@
                                 </a>
                             </div>
 
-                            <form class="custom-form subscribe-form" action="#" method="get" role="form">
+                            <form class="custom-form subscribe-form" action="#" method="post" role="form">
                                 <h5 class="mb-4">Formulario para suscribirse</h5>
 
                                 <input type="email" name="subscribe-email" id="subscribe-email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Correo Electrónico" required>
@@ -1012,27 +1020,35 @@
                         </div>
 
                         <div class="col-lg-5 col-12 mx-auto">
-                            <form class="custom-form contact-form" action="#" method="post" role="form">
+                            <form action="https://api.web3forms.com/submit" method="POST" id="contacto" class="custom-form contact-form" action="#" method="post" role="form">
                                 <h2>Formulario de Contacto</h2>
 
                                 <p class="mb-4">O, simplemente puede enviar un correo electrónico:
                                     <a href="#">Nadia@ClimbingBorders.org</a>
                                 </p>
                                 <div class="row">
+
+                                    <input type="hidden" name="access_key" value="ae4e13a2-c73a-4e1c-8ef8-64960acd354c">
+                                    <input type="hidden" name="subject" value="New Submission from Web3Forms">
+                                    <input type="checkbox" name="botcheck" id="" style="display: none;">
+
                                     <div class="col-lg-6 col-md-6 col-12">
-                                        <input type="text" name="first-name" id="first-name" class="form-control" placeholder="Alejandro" required>
+                                        <input type="text" name="Contacto-Nombre" id="first-name" class="form-control" placeholder="Alejandro" required>
                                     </div>
 
                                     <div class="col-lg-6 col-md-6 col-12">
-                                        <input type="text" name="last-name" id="last-name" class="form-control" placeholder="Medina" required>
+                                        <input type="text" name="Contacto-Apellido" id="last-name" class="form-control" placeholder="Medina" required>
                                     </div>
                                 </div>
 
-                                <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Alejandro@gmail.com" required>
+                                <input type="email" name="Contacto-Email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Alejandro@gmail.com" required>
 
-                                <textarea name="message" rows="5" class="form-control" id="message" placeholder="Asunto"></textarea>
+                                <textarea name="Contacto-Mensaje" rows="5" class="form-control" id="message" placeholder="Asunto"></textarea>
 
                                 <button type="submit" class="form-control">Enviar Mensaje</button>
+
+                                <div id="resultado2"></div>
+
                             </form>
                         </div>
 
@@ -1134,6 +1150,102 @@
         <script src="js/counter.js"></script>
         <script src="js/custom.js"></script>
         <script src="js/youtube.js"></script>
+        <script>
+            window.onload = function() {
+                // Reset the form fields when the page loads
+                document.getElementById("volunteer").reset();
+            };
+        </script>
+        <script>
+            const volunteer = document.getElementById('volunteer');
+            const resultado = document.getElementById('resultado');
+
+            volunteer.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(volunteer);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+            resultado.innerHTML = "Por favor, espere..."
+
+                fetch('https://api.web3forms.com/submit', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        body: json
+                    })
+                    .then(async (response) => {
+                        let json = await response.json();
+                        if (response.status == 200) {
+                            resultado.innerHTML = "Email enviado exitosamente!";
+                        } else {
+                            console.log(response);
+                            resultado.innerHTML = "Algo salió mal! Por favor, inténtelo de nuevo.";
+                        }
+                    })
+                    .catch(error => {
+                        console.log(error);
+                        resultado.innerHTML = "Algo salió mal! Por favor, inténtelo de nuevo.";
+                    })
+                    .then(function() {
+                        volunteer.reset();
+                        setTimeout(() => {
+                            resultado.style.display = "none";
+                        }, 3000);
+                    });
+            });
+        </script>
+
+        <script>
+            // This will be your second form's window.onload function
+            window.onload = function() {
+                // Reset the second form fields when the page loads
+                document.getElementById("contacto").reset();
+            };
+        </script>
+        <script>
+            // This script handles the second form
+            const volunteerForm2 = document.getElementById('contacto');
+            const resultArea2 = document.getElementById('resultado2');
+
+            volunteerForm2.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const formData2 = new FormData(volunteerForm2);
+                const object2 = Object.fromEntries(formData2);
+                const json2 = JSON.stringify(object2);
+                resultArea2.innerHTML = "Por favor, espere..."
+
+                fetch('https://api.web3forms.com/submit', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        body: json2
+                    })
+                    .then(async (response) => {
+                        let jsonResp2 = await response.json();
+                        if (response.status == 200) {
+                            resultArea2.innerHTML = "Email enviado exitosamente!";
+                        } else {
+                            console.log(response);
+                            resultArea2.innerHTML = "Algo salió mal! Por favor, inténtelo de nuevo.";
+                        }
+                    })
+                    .catch(error => {
+                        console.log(error);
+                        resultArea2.innerHTML = "Algo salió mal! Por favor, inténtelo de nuevo.";
+                    })
+                    .then(function() {
+                        volunteerForm2.reset();
+                        setTimeout(() => {
+                            resultArea2.style.display = "none";
+                        }, 3000);
+                    });
+            });
+        </script>
+
 
         <!-- Inclusión de Bootstrap JS y Popper.js -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -1175,6 +1287,6 @@
                     });
                 });
             });
-        </script>
+        </script>  
     </body>
 </html>
